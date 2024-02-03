@@ -5,78 +5,58 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 
-class CalculatorViewModel: ViewModel() {
 
+class CalculatorViewModel: ViewModel() {
+   // "+","-",
+    var fuckopers: MutableList<String> = mutableListOf("*","/")
+    var PlusMinus:MutableList<String> = mutableListOf("+","-")
     var state by mutableStateOf(CalculatorState())
+    var listcalc:ListCalc=ListCalc()
     fun onAction(action: CalculatorAction) {
         when (action) {
-            is CalculatorAction.Number -> setNumber(action.number)
-            is CalculatorAction.Calculate -> Calculate()
-            is CalculatorAction.Clear -> Clear()
-            is CalculatorAction.Delete ->Delete()
-            is CalculatorAction.Operation ->setOperation(action.operation)
-            is CalculatorAction.Decimal-> Decimal()
+            is CalculatorAction.ActionSymbol -> listcalc.addtoList(action)
+
+            is CalculatorAction.ActionCalc -> Calculate(action)
+
+            //is CalculatorAction.Operation ->setOperation(action.operation)
+            //is CalculatorAction.Decimal-> Decimal()
+            else -> {return}
         }
     }
-    private fun setNumber(number:Int){
-        if (state.operation==null)
-        {
-            state=state.copy(number1=state.number1+number.toString())
-        }
-        else
-        {
-            state=state.copy(number1=state.number2+number.toString())
-        }
 
-    }
-    private fun Calculate(){
-
-        val number1=state.number1.toDoubleOrNull()
-        val number2=state.number1.toDoubleOrNull()
-        if (number1!=null && number2!=null) {
-            val result = when (state.operation) {
-                is CalculatorOperation.Plus -> number1 + number2
-                is CalculatorOperation.Minus -> number1 - number2
-                is CalculatorOperation.Multiply -> number1 * number2
-                is CalculatorOperation.Divide -> number1 / number2
-                null -> return
+    private fun Calculate(action:CalculatorAction){
+        if (state.numbers.size<=3){return}
+        else{
+            for (i in state.numbers.indices step 3){
+                if (i==state.numbers.size-3){break}
             }
-            state = state.copy(number1 = result.toString(),
-                               number2="",
-                operation = null)
-
         }
     }
     private fun Clear(){
-        state=state.copy(number1="",operation=null,number2="")
+        state.numbers.clear()
     }
     private fun Delete(){
-        if(state.number2!=""){
-            state=state.copy(number2=state.number2.dropLast(1))
-        }
-        else{
-            if (state.operation!=null){state=state.copy(operation=null)}
-            else{
-                if(state.number1!="") {
-                    state=state.copy(number2=state.number1.dropLast(1))
-                }
-              }
+        var index:Int=0;
+        if (state.numbers.size==0){index=0}
+        else{index=state.numbers.size-1}
+        if (!state.numbers.isEmpty()) {
+            when {
+                state.numbers[index] in PlusMinus -> state.numbers.removeLast()
+                state.numbers[index] !in PlusMinus -> state.numbers[index]=state.numbers[index].dropLast(1)
+            }
         }
     }
-    private fun setOperation(operation:CalculatorOperation){
-        if (state.operation!=null){return}
-        else { state=state.copy(operation=operation)}
-    }
-    private fun Decimal(){
-        if(state.operation == null && !state.number1.contains(".") && state.number1.isNotBlank()) {
-            state = state.copy(
-                number1 = state.number1 + "."
-            )
-            return
-        } else if(!state.number2.contains(".") && state.number2.isNotBlank()) {
-            state = state.copy(
-                number2 = state.number2 + "."
-            )
-        }
-    }
+
+    //private fun Decimal(){
+    //    if(state.operation == null && !state.number1.contains(".") && state.number1.isNotBlank()) {
+    //        state = state.copy(
+    //            number1 = state.number1 + "."
+    //        )
+    //        return
+    //    } else if(!state.number2.contains(".") && state.number2.isNotBlank()) {
+    //        state = state.copy(
+    //            number2 = state.number2 + "."
+    //        )
+   //     }
+
 }

@@ -1,16 +1,21 @@
 package com.example.shed
  open class CalculatorAction(){
-    data class Number(val number:Int):CalculatorAction()
-    data class Operation(val operation:CalculatorOperation):CalculatorAction()
+    data class ActionSymbol(val symbol: String):CalculatorAction()
+    data class ActionOperation(val operation:EnumOperation):CalculatorAction()
+     data class ActionCalc(val calcbutton:EnumCalculation):CalculatorAction()
     //var Clear:CalculatorAction =CalculatorAction()
-    object Clear:CalculatorAction()
-    object Delete:CalculatorAction()
-    object Decimal:CalculatorAction()
-    object Calculate:CalculatorAction()
+
 }
-sealed class CalculatorOperation(val symbol:String){ // создаем объекты с одной переменной symbol, каждый объект означает операцию
-    object Plus:CalculatorOperation("+")
-    object Minus:CalculatorOperation("-")
-    object Multiply:CalculatorOperation("*")
-    object Divide:CalculatorOperation("/")
+open class EnumCalculation(){ // создаем объекты с одной переменной symbol, каждый объект означает операцию
+    object Clear
+    object Delete
+    object Decimal
+    object Calculate
+}
+
+open class EnumOperation(val symbol:String){ // создаем объекты с одной переменной symbol, каждый объект означает операцию
+    object Plus:EnumOperation("+")
+    object Minus:EnumOperation("-")
+    object Multiply:EnumOperation("*")
+    object Divide:EnumOperation("/")
 }
