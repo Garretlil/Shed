@@ -62,7 +62,7 @@ fun Creat(viewModel:CalculatorViewModel){
                         .weight(2f)
                 ) {
 
-                    viewModel.onAction(CalculatorAction.Clear())
+                    viewModel.onAction(CalculatorAction.ActionCalc(EnumCalculation.Clear))
                 }
                 CalculatorButton(
 
@@ -72,7 +72,7 @@ fun Creat(viewModel:CalculatorViewModel){
                         .aspectRatio(1f)
                         .weight(1f)
                 ) {
-                    viewModel.onAction(CalculatorAction.Delete)
+                    viewModel.onAction(CalculatorAction.ActionCalc(EnumCalculation.Delete))
                 }
                 CalculatorButton(
                     symbol = "/",
@@ -81,7 +81,7 @@ fun Creat(viewModel:CalculatorViewModel){
                         .aspectRatio(1f)
                         .weight(1f)
                 ) {
-                    viewModel.onAction(CalculatorAction.Operation(CalculatorOperation.Divide))
+                    viewModel.onAction(CalculatorAction.ActionOperation(EnumOperation.Divide))
                 }
             }
             Row(
@@ -96,7 +96,7 @@ fun Creat(viewModel:CalculatorViewModel){
                         .aspectRatio(1f)
                         .weight(1f)
                 ) {
-                    viewModel.onAction(CalculatorAction.Symbol("7"))
+                    viewModel.onAction(CalculatorAction.ActionSymbol("7"))
                 }
                 CalculatorButton(
                     symbol = "8",
@@ -105,7 +105,7 @@ fun Creat(viewModel:CalculatorViewModel){
                         .aspectRatio(1f)
                         .weight(1f)
                 ) {
-                    viewModel.onAction(CalculatorAction.Symbol("8"))
+                    viewModel.onAction(CalculatorAction.ActionSymbol("8"))
                 }
                 CalculatorButton(
                     symbol = "9",
@@ -114,7 +114,7 @@ fun Creat(viewModel:CalculatorViewModel){
                         .aspectRatio(1f)
                         .weight(1f)
                 ) {
-                    viewModel.onAction(CalculatorAction.Symbol("9"))
+                    viewModel.onAction(CalculatorAction.ActionSymbol("9"))
                 }
                 CalculatorButton(
                     symbol = "x",
@@ -123,7 +123,7 @@ fun Creat(viewModel:CalculatorViewModel){
                         .aspectRatio(1f)
                         .weight(1f)
                 ) {
-                    viewModel.onAction(CalculatorAction.Operation(CalculatorOperation.Multiply))
+                    viewModel.onAction(CalculatorAction.ActionOperation(EnumOperation.Multiply))
                 }
             }
             Row(
@@ -138,7 +138,7 @@ fun Creat(viewModel:CalculatorViewModel){
                         .aspectRatio(1f)
                         .weight(1f)
                 ) {
-                    viewModel.onAction(CalculatorAction.Symbol("4"))
+                    viewModel.onAction(CalculatorAction.ActionSymbol("4"))
                 }
                 CalculatorButton(
                     symbol = "5",
@@ -147,7 +147,7 @@ fun Creat(viewModel:CalculatorViewModel){
                         .aspectRatio(1f)
                         .weight(1f)
                 ) {
-                    viewModel.onAction(CalculatorAction.Symbol("5"))
+                    viewModel.onAction(CalculatorAction.ActionSymbol("5"))
                 }
                 CalculatorButton(
                     symbol = "6",
@@ -156,7 +156,7 @@ fun Creat(viewModel:CalculatorViewModel){
                         .aspectRatio(1f)
                         .weight(1f)
                 ) {
-                    viewModel.onAction(CalculatorAction.Symbol("6"))
+                    viewModel.onAction(CalculatorAction.ActionSymbol("6"))
                 }
                 CalculatorButton(
                     symbol = "-",
@@ -165,7 +165,7 @@ fun Creat(viewModel:CalculatorViewModel){
                         .aspectRatio(1f)
                         .weight(1f)
                 ) {
-                    viewModel.onAction(CalculatorAction.Operation(CalculatorOperation.Minus))
+                    viewModel.onAction(CalculatorAction.ActionOperation(EnumOperation.Minus))
                 }
             }
             Row(
@@ -180,7 +180,7 @@ fun Creat(viewModel:CalculatorViewModel){
                         .aspectRatio(1f)
                         .weight(1f)
                 ) {
-                    viewModel.onAction(CalculatorAction.Symbol("1"))
+                    viewModel.onAction(CalculatorAction.ActionSymbol("1"))
                 }
                 CalculatorButton(
                     symbol = "2",
@@ -189,7 +189,7 @@ fun Creat(viewModel:CalculatorViewModel){
                         .aspectRatio(1f)
                         .weight(1f)
                 ) {
-                    viewModel.onAction(CalculatorAction.Symbol("2"))
+                    viewModel.onAction(CalculatorAction.ActionSymbol("2"))
                 }
                 CalculatorButton(
                     symbol = "3",
@@ -198,7 +198,7 @@ fun Creat(viewModel:CalculatorViewModel){
                         .aspectRatio(1f)
                         .weight(1f)
                 ) {
-                    viewModel.onAction(CalculatorAction.Symbol("3"))
+                    viewModel.onAction(CalculatorAction.ActionSymbol("3"))
                 }
                 CalculatorButton(
                     symbol = "+",
@@ -207,7 +207,7 @@ fun Creat(viewModel:CalculatorViewModel){
                         .aspectRatio(1f)
                         .weight(1f)
                 ) {
-                    viewModel.onAction(CalculatorAction.Operation(CalculatorOperation.Plus))//для onClick
+                    viewModel.onAction(CalculatorAction.ActionOperation(EnumOperation.Plus))//для onClick
                 }
             }
             Row(
@@ -222,7 +222,7 @@ fun Creat(viewModel:CalculatorViewModel){
                         .aspectRatio(2f)
                         .weight(2f)
                 ) {
-                    viewModel.onAction(CalculatorAction.Symbol("0"))
+                    viewModel.onAction(CalculatorAction.ActionSymbol("0"))
                 }
                 CalculatorButton(
                     symbol = ".",
@@ -231,7 +231,7 @@ fun Creat(viewModel:CalculatorViewModel){
                         .aspectRatio(1f)
                         .weight(1f)
                 ) {
-                    viewModel.onAction(CalculatorAction.Decimal)
+                    viewModel.onAction(CalculatorAction.ActionCalc(EnumCalculation.Decimal))
                 }
                 CalculatorButton(
                     symbol = "=",
@@ -240,7 +240,7 @@ fun Creat(viewModel:CalculatorViewModel){
                         .aspectRatio(1f)
                         .weight(1f)
                 ) {
-                    viewModel.onAction(CalculatorAction.Calculate)
+                    viewModel.onAction(CalculatorAction.ActionCalc(EnumCalculation.Calculate))
                 }
             }
         }
