@@ -8,9 +8,8 @@ import androidx.lifecycle.ViewModel
 
 
 class CalculatorViewModel: ViewModel() {
-   // "+","-",
     var state by mutableStateOf(CalculatorState())
-    var showtext:MutableState<String> = mutableStateOf("jjjj")
+    var showtext:MutableState<String> = mutableStateOf("")
     var listcalc :ListCalc=ListCalc(showtext)
 
     fun onAction(action: CalculatorAction) {
@@ -28,10 +27,6 @@ class CalculatorViewModel: ViewModel() {
             is EnumCalculation.Decimal   -> listcalc.Decimal()
         }
     }
-
-
-
-
 //    private fun Clear(){
 //        state.numbers.clear()
 //    }
