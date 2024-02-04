@@ -20,8 +20,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.shed.ui.theme.MediumGray
 import com.example.shed.ui.theme.Orange
-
-
 @Composable
 fun Creat(viewModel:CalculatorViewModel){
     val buttonSpacing = 20.dp
@@ -38,7 +36,7 @@ fun Creat(viewModel:CalculatorViewModel){
             verticalArrangement = Arrangement.spacedBy(buttonSpacing),
         ) {
             Text(
-                text = viewModel.state.number1 + (viewModel.state.operation?.symbol ?: "") + viewModel.state.number2,
+                text = viewModel.showtext.value ,
                 textAlign = TextAlign.End,
                 modifier = Modifier
                     .fillMaxWidth()
@@ -62,7 +60,7 @@ fun Creat(viewModel:CalculatorViewModel){
                         .weight(2f)
                 ) {
 
-                    viewModel.onAction(CalculatorAction.ActionCalc(EnumCalculation.Clear))
+                    viewModel.onAction2(EnumCalculation.Clear)
                 }
                 CalculatorButton(
 
@@ -72,7 +70,7 @@ fun Creat(viewModel:CalculatorViewModel){
                         .aspectRatio(1f)
                         .weight(1f)
                 ) {
-                    viewModel.onAction(CalculatorAction.ActionCalc(EnumCalculation.Delete))
+                    viewModel.onAction2(EnumCalculation.Delete)
                 }
                 CalculatorButton(
                     symbol = "/",
@@ -231,7 +229,7 @@ fun Creat(viewModel:CalculatorViewModel){
                         .aspectRatio(1f)
                         .weight(1f)
                 ) {
-                    viewModel.onAction(CalculatorAction.ActionCalc(EnumCalculation.Decimal))
+                    viewModel.onAction2(EnumCalculation.Decimal)
                 }
                 CalculatorButton(
                     symbol = "=",
@@ -240,7 +238,7 @@ fun Creat(viewModel:CalculatorViewModel){
                         .aspectRatio(1f)
                         .weight(1f)
                 ) {
-                    viewModel.onAction(CalculatorAction.ActionCalc(EnumCalculation.Calculate))
+                    viewModel.onAction2(EnumCalculation.Calculate)
                 }
             }
         }

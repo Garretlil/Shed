@@ -12,7 +12,7 @@ open class EnumCalculation(){ // создаем объекты с одной п�
     object Calculate:EnumCalculation()
 }
 
-open class EnumOperation(symbol:String){ // создаем объекты с одной переменной symbol, каждый объект означает операцию
+open class EnumOperation(val symbol:String){ // создаем объекты с одной переменной symbol, каждый объект означает операцию
     object Plus:EnumOperation("+")
     object Minus:EnumOperation("-")
     object Multiply:EnumOperation("*")
