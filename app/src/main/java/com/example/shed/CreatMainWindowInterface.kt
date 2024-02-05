@@ -18,6 +18,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.shed.ui.theme.DownGray
 import com.example.shed.ui.theme.MediumGray
 import com.example.shed.ui.theme.Orange
 @Composable
@@ -26,7 +27,7 @@ fun Creat(viewModel:CalculatorViewModel){
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color.DarkGray)
+            .background(Color.Black)
             .padding(16.dp)
     ) {
         Column(
@@ -87,27 +88,27 @@ fun Creat(viewModel:CalculatorViewModel){
                     .fillMaxWidth(),
                 horizontalArrangement = Arrangement.spacedBy(buttonSpacing)
             ) {
-                CalculatorButton(
+                CalculatorButtonNumber(
                     symbol = "7",
-                    color = MediumGray,
+                    color = DownGray,
                     modifier = Modifier
                         .aspectRatio(1f)
                         .weight(1f)
                 ) {
                     viewModel.onAction(CalculatorAction.ActionSymbol("7"))
                 }
-                CalculatorButton(
+                CalculatorButtonNumber(
                     symbol = "8",
-                    color = MediumGray,
+                    color = DownGray,
                     modifier = Modifier
                         .aspectRatio(1f)
                         .weight(1f)
                 ) {
                     viewModel.onAction(CalculatorAction.ActionSymbol("8"))
                 }
-                CalculatorButton(
+                CalculatorButtonNumber(
                     symbol = "9",
-                    color = MediumGray,
+                    color = DownGray,
                     modifier = Modifier
                         .aspectRatio(1f)
                         .weight(1f)
@@ -129,27 +130,27 @@ fun Creat(viewModel:CalculatorViewModel){
                     .fillMaxWidth(),
                 horizontalArrangement = Arrangement.spacedBy(buttonSpacing)
             ) {
-                CalculatorButton(
+                CalculatorButtonNumber(
                     symbol = "4",
-                    color = MediumGray,
+                    color = DownGray,
                     modifier = Modifier
                         .aspectRatio(1f)
                         .weight(1f)
                 ) {
                     viewModel.onAction(CalculatorAction.ActionSymbol("4"))
                 }
-                CalculatorButton(
+                CalculatorButtonNumber(
                     symbol = "5",
-                    color = MediumGray,
+                    color = DownGray,
                     modifier = Modifier
                         .aspectRatio(1f)
                         .weight(1f)
                 ) {
                     viewModel.onAction(CalculatorAction.ActionSymbol("5"))
                 }
-                CalculatorButton(
+                CalculatorButtonNumber(
                     symbol = "6",
-                    color = MediumGray,
+                    color = DownGray,
                     modifier = Modifier
                         .aspectRatio(1f)
                         .weight(1f)
@@ -171,27 +172,27 @@ fun Creat(viewModel:CalculatorViewModel){
                     .fillMaxWidth(),
                 horizontalArrangement = Arrangement.spacedBy(buttonSpacing)
             ) {
-                CalculatorButton(
+                CalculatorButtonNumber(
                     symbol = "1",
-                    color = MediumGray,
+                    color = DownGray,
                     modifier = Modifier
                         .aspectRatio(1f)
                         .weight(1f)
                 ) {
                     viewModel.onAction(CalculatorAction.ActionSymbol("1"))
                 }
-                CalculatorButton(
+                CalculatorButtonNumber(
                     symbol = "2",
-                    color = MediumGray,
+                    color = DownGray,
                     modifier = Modifier
                         .aspectRatio(1f)
                         .weight(1f)
                 ) {
                     viewModel.onAction(CalculatorAction.ActionSymbol("2"))
                 }
-                CalculatorButton(
+                CalculatorButtonNumber(
                     symbol = "3",
-                    color = MediumGray,
+                    color = DownGray,
                     modifier = Modifier
                         .aspectRatio(1f)
                         .weight(1f)
@@ -213,18 +214,18 @@ fun Creat(viewModel:CalculatorViewModel){
                     .fillMaxWidth(),
                 horizontalArrangement = Arrangement.spacedBy(buttonSpacing)
             ) {
-                CalculatorButton(
+                CalculatorButtonNumber(
                     symbol = "0",
-                    color = MediumGray,
+                    color = DownGray,
                     modifier = Modifier
                         .aspectRatio(2f)
                         .weight(2f)
                 ) {
                     viewModel.onAction(CalculatorAction.ActionSymbol("0"))
                 }
-                CalculatorButton(
+                CalculatorButtonNumber(
                     symbol = ".",
-                    color = MediumGray,
+                    color = DownGray,
                     modifier = Modifier
                         .aspectRatio(1f)
                         .weight(1f)

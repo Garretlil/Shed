@@ -33,6 +33,32 @@ fun CalculatorButton(
         Text(
             text = symbol,
             fontSize = 36.sp,
+            color = Color.Black
+        )
+    }
+
+
+}
+@Composable
+fun CalculatorButtonNumber(
+    modifier: Modifier = Modifier,
+    color: Color = Color.White,
+    symbol:String,
+    onClick:() ->Unit
+) {
+    Box(
+        contentAlignment = Alignment.Center,
+        modifier = Modifier
+            .clip(RoundedCornerShape(100.dp))
+            .background(color)
+            .clickable {
+                onClick()
+            }
+            .then(modifier)
+    ) {
+        Text(
+            text = symbol,
+            fontSize = 36.sp,
             color = Color.White
         )
     }

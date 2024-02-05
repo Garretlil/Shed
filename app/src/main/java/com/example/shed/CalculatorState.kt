@@ -4,13 +4,11 @@ import androidx.compose.runtime.MutableState
 
 data class CalculatorState(
     var numbers: MutableList<IManageItem> = mutableListOf()
-
     //var str:String=""
     //val number1:String="",
     //val number2:String="",
     //var operation:CalculatorOperation?=null
 )
-
 class ListCalc(showtxt_: MutableState<String> ) :MutableList<IManageItem> by mutableListOf(){
     var onActionChange: (str:String) -> Unit = ::change
     var showtxt=showtxt_
