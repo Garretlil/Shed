@@ -12,9 +12,28 @@ open class EnumCalculation(){ // создаем объекты с одной п�
     object Calculate:EnumCalculation()
 }
 
-open class EnumOperation(val symbol:String){ // создаем объекты с одной переменной symbol, каждый объект означает операцию
-    object Plus:EnumOperation("+")
-    object Minus:EnumOperation("-")
-    object Multiply:EnumOperation("*")
-    object Divide:EnumOperation("/")
+open class EnumOperation(val symbol:String,var priority:Int){
+    open fun Calc(num1:Double, num2:Double):Double
+    { return 0.0
+    }// создаем объекты с одной переменной symbol, каждый объект означает операцию
+    object Plus:EnumOperation("+",0){
+        override fun Calc(num1:Double,num2:Double):Double{
+            return num1+num2
+        }
+    }
+    object Minus:EnumOperation("-",0){
+        override fun Calc(num1:Double,num2:Double):Double{
+            return num1-num2
+        }
+    }
+    object Multiply:EnumOperation("*",1){
+          override fun Calc(num1:Double,num2:Double):Double{
+               return num1*num2
+           }
+    }
+    object Divide:EnumOperation("/",1){
+        override fun Calc(num1:Double,num2:Double):Double{
+            return num1/num2
+        }
+    }
 }

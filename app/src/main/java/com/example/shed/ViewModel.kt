@@ -27,40 +27,5 @@ class CalculatorViewModel: ViewModel() {
             is EnumCalculation.Decimal   -> listcalc.Decimal()
         }
     }
-//    private fun Clear(){
-//        state.numbers.clear()
-//    }
-
-
-//    private fun Delete(){
-//        var index:Int=0;
-//        if (state.numbers.size==0){index=0}
-//        else{index=state.numbers.size-1}
-//        if (!state.numbers.isEmpty()) {
-//            when {
-//                state.numbers[index] in PlusMinus -> state.numbers.removeLast()
-//                state.numbers[index] !in PlusMinus -> state.numbers[index]=state.numbers[index].dropLast(1)
-//            }
-//        }
-//    }
-
-    //private fun Decimal(){
-    //    if(state.operation == null && !state.number1.contains(".") && state.number1.isNotBlank()) {
-    //        state = state.copy(
-    //            number1 = state.number1 + "."
-    //        )
-    //        return
-    //    } else if(!state.number2.contains(".") && state.number2.isNotBlank()) {
-    //        state = state.copy(
-    //            number2 = state.number2 + "."
-    //        )
-   //     }
-
-    //                when ((this[i] as ItemOper).oper){
-//                    is EnumOperation.Plus -> str+=
-//                    is EnumOperation.Minus -> str+="-"
-//                    is EnumOperation.Multiply -> str+="*"
-//                    is EnumOperation.Divide -> str+="/"
-//               }
 
 }

@@ -18,7 +18,7 @@ class ItemNumber:IManageItem{
     }
 }
 class ItemOper():IManageItem{
-    var oper:EnumOperation=EnumOperation("")
+    var oper:EnumOperation=EnumOperation("",-1)
     override fun Add(symbol: String) {}
     override fun Delete() {}
 
